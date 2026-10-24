@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run sample Spotify ETL",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/etl.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "--input", "data/sample/mpd.slice.*.json",
+        "--output", "data/processed",
+        "--spark-master", "local[4]",
+        "--shuffle-partitions", "8"
+      ]
+    },
+    {
+      "name": "Validate sample Spotify ETL",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/validate.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "--output", "data/processed",
+        "--spark-master", "local[4]",
+        "--expected-playlists", "4"
+      ]
+    }
+  ]
+}
