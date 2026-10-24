@@ -1,0 +1,14 @@
+{
+  "info": {"slice": "1000-1999", "description": "Synthetic sample for local testing; not Spotify data"},
+  "playlists": [
+    {
+      "pid": 1000, "name": "Indie afternoon", "num_tracks": 3,
+      "tracks": [
+        {"pos": 0, "track_uri": "spotify:track:syntheticA", "track_name": "Song A", "artist_uri": "spotify:artist:artist1", "artist_name": "Artist One", "album_uri": "spotify:album:album1", "album_name": "Album One", "duration_ms": 210000},
+        {"pos": 1, "track_uri": "spotify:track:syntheticD", "track_name": "Song D", "artist_uri": "spotify:artist:artist4", "artist_name": "Artist Four", "album_uri": "spotify:album:album4", "album_name": "Album Four", "duration_ms": 290000},
+        {"pos": 2, "track_uri": "spotify:track:syntheticE", "track_name": "Song E", "artist_uri": "spotify:artist:artist5", "artist_name": "Artist Five", "album_uri": "spotify:album:album5", "album_name": "Album Five", "duration_ms": 220000}
+      ]
+    },
+    {"pid": 1001, "name": "Empty playlist", "num_tracks": 0, "tracks": []}
+  ]
+}

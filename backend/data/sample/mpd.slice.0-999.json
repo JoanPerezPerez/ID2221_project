@@ -1,0 +1,20 @@
+{
+  "info": {"slice": "0-999", "description": "Synthetic sample for local testing; not Spotify data"},
+  "playlists": [
+    {
+      "pid": 0, "name": "Morning mix", "num_tracks": 3, "num_followers": 2, "modified_at": 1500000000,
+      "tracks": [
+        {"pos": 0, "track_uri": "spotify:track:syntheticA", "track_name": "Song A", "artist_uri": "spotify:artist:artist1", "artist_name": "Artist One", "album_uri": "spotify:album:album1", "album_name": "Album One", "duration_ms": 210000},
+        {"pos": 1, "track_uri": "spotify:track:syntheticB", "track_name": "Song B", "artist_uri": "spotify:artist:artist2", "artist_name": "Artist Two", "album_uri": "spotify:album:album2", "album_name": "Album Two", "duration_ms": 180000},
+        {"pos": 2, "track_uri": "spotify:track:syntheticA", "track_name": "Song A", "artist_uri": "spotify:artist:artist1", "artist_name": "Artist One", "album_uri": "spotify:album:album1", "album_name": "Album One", "duration_ms": 210000}
+      ]
+    },
+    {
+      "pid": 1, "name": "Focus", "num_tracks": 2, "num_followers": 0, "modified_at": 1500000001,
+      "tracks": [
+        {"pos": 0, "track_uri": "spotify:track:syntheticC", "track_name": "Song C", "artist_uri": "spotify:artist:artist3", "artist_name": "Artist Three", "album_uri": "spotify:album:album3", "album_name": "Album Three", "duration_ms": 240000},
+        {"pos": 1, "track_uri": "spotify:track:syntheticB", "track_name": "Song B", "artist_uri": "spotify:artist:artist2", "artist_name": "Artist Two", "album_uri": "spotify:album:album2", "album_name": "Album Two", "duration_ms": 180000}
+      ]
+    }
+  ]
+}
