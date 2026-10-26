@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 import type { Track } from '#lib/types.ts';
 import type { RequestHandler } from './$types';
 
-// Mockade sökbara låtar (där spotify:track:1 och spotify:track:3 har rekommendationer)
+// Mock searchable tracks (where spotify:track:1 and spotify:track:3 have recommendations)
 const MOCK_TRACKS: Track[] = [
 	{
 		track_uri: 'spotify:track:1',

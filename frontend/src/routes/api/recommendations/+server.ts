@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 import type { RecommendedTrack, TrackRecommendations } from '#lib/types.ts';
 import type { RequestHandler } from './$types';
 
-// Simulerad MongoDB-data med förberäknade toppgrannar
+// Simulated MongoDB data with precomputed top nearest neighbors
 const MOCK_DB: TrackRecommendations[] = [
 	{
 		track_uri: 'spotify:track:1',
@@ -55,19 +55,20 @@ const MOCK_DB: TrackRecommendations[] = [
 export const GET: RequestHandler = async ({ url }) => {
 	const urisParam = url.searchParams.get('uris') ?? '';
 	const selectedUris = urisParam ? urisParam.split(',') : [];
+	const selectedSet = new Set(selectedUris);
 
-	if (selectedUris.length === 0) {
+	if (selectedSet.size === 0) {
 		return json([]);
 	}
 
-	// 1. Slå ihop och summera likhetspoäng
+	// 1. Aggregate and sum similarity scores
 	const scoreMap = new Map<string, RecommendedTrack>();
 
 	for (const uri of selectedUris) {
 		const neighbors = MOCK_DB.find((doc) => doc.track_uri === uri)?.recommendations ?? [];
 		for (const track of neighbors) {
-			// Hoppa över om låten redan valts av användaren
-			if (selectedUris.includes(track.track_uri)) continue;
+			// Skip tracks already selected by the user
+			if (selectedSet.has(track.track_uri)) continue;
 
 			const existing = scoreMap.get(track.track_uri);
 			if (!existing) {
@@ -78,10 +79,11 @@ export const GET: RequestHandler = async ({ url }) => {
 		}
 	}
 
-	// 2. Sortera fallande efter totalScore
+	// 2. Sort descending by totalScore
 	const sorted = Array.from(scoreMap.values()).sort(
 		(a, b) => (b.totalScore ?? b.similarity) - (a.totalScore ?? a.similarity)
 	);
 
-	return json(sorted);
+	// 3. Return top 20
+	return json(sorted.slice(0, 20));
 };

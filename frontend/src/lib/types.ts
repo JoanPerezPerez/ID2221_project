@@ -9,7 +9,7 @@ export type Track = {
 	pos?: number;
 };
 
-// En låt som rekommenderas, med beräknad likhetspoäng
+// A recommended track with computed similarity score
 export type RecommendedTrack = Track & {
 	similarity: number;
 	totalScore?: number;
