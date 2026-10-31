@@ -1,0 +1,22 @@
+{
+  "recall_at_k": 0.6683333333333333,
+  "ndcg_at_k": 0.39529011917398177,
+  "k": 10,
+  "rank": 16,
+  "max_iter": 10,
+  "regularization": 0.1,
+  "alpha": 20.0,
+  "seed": 42,
+  "test_fraction": 0.2,
+  "split_strategy": "tail",
+  "train_interactions": 1533,
+  "test_interactions": 308,
+  "known_test_interactions": 308,
+  "cold_start_test_interactions": 0,
+  "cold_start_fraction": 0.0,
+  "evaluated_playlists": 100,
+  "train_catalog_items": 90,
+  "candidate_pool": 90,
+  "sufficient_pool_for_exact_top_k_unseen": true,
+  "note": "Recall/NDCG are calculated on held-out tracks that also appear in the training catalog, for a subset of evaluable playlists. Songs known in each playlist's training portion are excluded from its recommendations. The ETL track index was created before the split; for strict isolation use a train-only mapping."
+}

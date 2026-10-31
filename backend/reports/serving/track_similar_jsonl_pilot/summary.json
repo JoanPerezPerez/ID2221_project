@@ -1,0 +1,7 @@
+{
+  "indexed_tracks": 1900261,
+  "query_tracks_exported": 100000,
+  "k": 20,
+  "method": "cosine_similarity_unit_normalized_ALS_factors_FAISS_HNSW_approximate",
+  "all_tracks": false
+}

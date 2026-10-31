@@ -1,0 +1,32 @@
+{
+  "input_json": "data/sample/mpd.generated.json",
+  "input_parquet": "data/processed/silver/playlist_tracks",
+  "raw_json_bytes": 522754,
+  "silver_playlist_tracks_parquet_bytes": 4523,
+  "all_silver_tables_parquet_bytes": 12281,
+  "size_note": "Raw JSON includes all MPD metadata; Silver tables are transformed/restructured. These sizes do not isolate format-only compression.",
+  "runs": 5,
+  "warmup": 1,
+  "json_times_s": [
+    0.444228,
+    0.530378,
+    0.543662,
+    0.356472,
+    0.476466
+  ],
+  "parquet_times_s": [
+    0.561035,
+    0.477143,
+    0.408926,
+    0.405504,
+    0.44075
+  ],
+  "median_json_s": 0.476466,
+  "median_parquet_s": 0.44075,
+  "speedup_json_over_parquet": 1.081034600113443,
+  "matching_scan_result": {
+    "rows": 1841,
+    "sum_uri_lengths": 51548
+  },
+  "methodology": "Equivalent decoded-URI scan; JSON includes nested-array explode; Parquet is pre-flattened; caches and I/O are not cold-controlled."
+}
