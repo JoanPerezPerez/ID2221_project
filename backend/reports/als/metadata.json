@@ -1,0 +1,14 @@
+{
+  "trained_at_utc": "2026-10-30T17:19:08.833640+00:00",
+  "training_mode": "final_full_dataset_no_holdout",
+  "interactions": 1841,
+  "playlists_with_factors": 120,
+  "tracks_with_factors": 90,
+  "rank": 16,
+  "max_iter": 10,
+  "reg": 0.1,
+  "alpha": 20.0,
+  "seed": 42,
+  "source": "data/processed",
+  "note": "This full-data model has no unbiased test metrics. Use the separate holdout evaluation outputs."
+}
